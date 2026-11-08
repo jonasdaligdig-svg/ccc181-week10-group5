@@ -65,33 +65,38 @@ Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png
 
 ---
 
-## Part 2: Backend Protection & API Validation
+## Part 2: Login with the API
 
-### How to run (Full Stack)
+### How to run
 
-**Backend Setup:**
-1. Open a terminal in the `server/` directory.
-2. Run `npm install`.
-3. Run `copy .env.example .env` (Windows) or `cp .env.example .env` (Mac/Linux) and fill in the values.
-4. Run `npm start` (Runs on http://localhost:3000).
+Terminal 1 (backend):
 
-**Frontend Setup:**
-1. Open a terminal in the root directory.
-2. Run `npm install`.
-3. Run `copy .env.example .env` (Windows) or `cp .env.example .env` (Mac/Linux).
-4. Run `npm run dev` (Runs on http://localhost:5173).
+```bash
+cd server
+npm install
+copy .env.example .env
+npm start
+```
 
-**Demo Account:**
-- Email: `student@campusconnect.test`
-- Password: `Campus26`
+Terminal 2 (front end, in the project root):
+
+```bash
+npm install
+copy .env.example .env
+npm run dev
+```
+
+Open http://localhost:5173 and log in with the demo account:
+`student@campusconnect.test` / `Campus26`.
+Both `.env.example` files hold fake values. The real `.env` files are not committed.
 
 ### API summary
 
 | Method | Endpoint | Description |
 |---|---|---|
-| GET | `/api/v1/health` | Backend health check |
+| GET | `/api/v1/health` | Checks that the API is running |
 | POST | `/api/v1/sessions` | User login (returns JWT token) |
-| GET | `/api/v1/users/me` | Fetch logged-in user profile (Protected) |
+| GET | `/api/v1/users/me` | Returns the logged-in user (needs the token) |
 
 *For full request/response details, see [docs/API-SPEC.md](docs/API-SPEC.md).*
 
