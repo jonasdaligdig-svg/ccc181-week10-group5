@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import BrandPanel from './components/BrandPanel';
 import LoginForm from './components/LoginForm';
 import Footer from './components/Footer';
+import './styles/auth.css';
 
 export default function App() {
   return (
