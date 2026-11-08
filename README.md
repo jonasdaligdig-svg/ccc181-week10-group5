@@ -62,3 +62,63 @@ Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png
 ## What our group learned (leader writes this last)
 
 > Our group learned how to build a responsive interface starting from a 360px mobile base layout and progressively enhancing it with min-width media queries at 768px, 1024px, and 1280px, while enforcing 48px touch targets and 16px font sizes for mobile usability. We also learned how dividing CSS into modular files (base.css, nav.css, form.css) across separate Git feature branches and cross-reviewing Pull Requests prevents merge conflicts and keeps teamwork organized.
+
+---
+
+## Part 2: Backend Protection & API Validation
+
+### How to run (Full Stack)
+
+**Backend Setup:**
+1. Open a terminal in the `server/` directory.
+2. Run `npm install`.
+3. Run `copy .env.example .env` (Windows) or `cp .env.example .env` (Mac/Linux) and fill in the values.
+4. Run `npm start` (Runs on http://localhost:3000).
+
+**Frontend Setup:**
+1. Open a terminal in the root directory.
+2. Run `npm install`.
+3. Run `copy .env.example .env` (Windows) or `cp .env.example .env` (Mac/Linux).
+4. Run `npm run dev` (Runs on http://localhost:5173).
+
+**Demo Account:**
+- Email: `student@campusconnect.test`
+- Password: `Campus26`
+
+### API summary
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/v1/health` | Backend health check |
+| POST | `/api/v1/sessions` | User login (returns JWT token) |
+| GET | `/api/v1/users/me` | Fetch logged-in user profile (Protected) |
+
+*For full request/response details, see [docs/API-SPEC.md](docs/API-SPEC.md).*
+
+### Who did what (Part 2)
+
+| Name | GitHub Username | What I did in Part 2 |
+|---|---|---|
+|  |  |  |
+| Jonas M. Daligdig | @jonasdaligdig-svg | Configured local environment and captured the required backend protection and 360px UI validation screenshots. |
+|  |  |  |
+
+### Part 2 Screenshots
+
+**1. API Health Check**
+![Health Check](screenshots/postman-health.png)
+
+**2. Valid Login (200 OK)**
+![Login 200 OK](screenshots/postman-login-200.png)
+
+**3. Invalid Login (401 Unauthorized)**
+![Login 401](screenshots/postman-login-401.png)
+
+**4. Protected Route without Token (401 Unauthorized)**
+![Me 401](screenshots/postman-me-401.png)
+
+**5. UI Login Fail (360px width)**
+![Login Fail 360](screenshots/login-fail-360.png)
+
+**6. UI Login Success (360px width)**
+![Login Success 360](screenshots/login-success-360.png)
