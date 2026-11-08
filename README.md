@@ -106,7 +106,7 @@ Both `.env.example` files hold fake values. The real `.env` files are not commit
 |---|---|---|
 | Shaun Armand E. Porras | @PorrasShaun | Back end: set up Express server in server/, added GET /api/v1/health and POST /api/v1/sessions with bcrypt password check and JWT signing. |
 | Jonas M. Daligdig | @jonasdaligdig-svg | Configured local environment and captured the required backend protection and 360px UI validation screenshots. |
-|  |  |  |
+| Ruby Jean Gabilan | @gabilanrubyjean-pixel | Front end: added .env and src/api/auth.ts, made the login form call the API with Loading, Success and Error states, added the Welcome screen with refresh and Log out, and styled it in auth.css. |
 
 ### Part 2 Screenshots
 
