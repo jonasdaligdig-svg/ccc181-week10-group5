@@ -104,7 +104,7 @@ Both `.env.example` files hold fake values. The real `.env` files are not commit
 
 | Name | GitHub Username | What I did in Part 2 |
 |---|---|---|
-|  |  |  |
+| Shaun Armand E. Porras | @PorrasShaun | Back end: set up Express server in server/, added GET /api/v1/health and POST /api/v1/sessions with bcrypt password check and JWT signing. |
 | Jonas M. Daligdig | @jonasdaligdig-svg | Configured local environment and captured the required backend protection and 360px UI validation screenshots. |
 |  |  |  |
 
