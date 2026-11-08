@@ -57,3 +57,44 @@ app.post("/api/v1/sessions", (req, res) => {
     user: { id: user.id, name: user.name, email: user.email },
   });
 });
+
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers["authorization"];
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return res.status(401).json({ error: "Not logged in." });
+  }
+
+  const token = authHeader.split(" ")[1];
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    return res.status(401).json({ error: "Not logged in." });
+  }
+}
+
+app.get("/api/v1/users/me", authenticateToken, (req, res) => {
+  const user = users.find((u) => u.id === req.user.id);
+  if (!user) {
+    return res.status(401).json({ error: "Not logged in." });
+  }
+  return res.status(200).json({
+    id: user.id,
+    name: user.name,
+    email: user.email,
+  });
+});
+
+app.use((req, res) => {
+  res.status(404).json({ error: "Not found." });
+});
+
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ error: "Something went wrong." });
+});
+
+app.listen(PORT, () => {
+  console.log(`API running on http://localhost:${PORT}`);
+});
