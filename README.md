@@ -114,7 +114,7 @@ Both `.env.example` files hold fake values. The real `.env` files are not commit
 ![Health Check](screenshots/postman-health.png)
 
 **2. Valid Login (200 OK)**
-![Login 200 OK](screenshots/postman-200.png)
+![Login 200 OK](screenshots/postman-login-200.png)
 
 **3. Invalid Login (401 Unauthorized)**
 ![Login 401](screenshots/postman-login-401.png)
